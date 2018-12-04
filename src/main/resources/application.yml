@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+mybatis:
+  mapper-locations: classpath:com/example/demo1/dao/mapper/*Mapper.xml
+  type-aliases-package: com.example.demo1.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    url: ${DEMO_MYSQL_URL}
+    username: ${DEMO_MYSQL_USERNAME}
+    password: ${DEMO_MYSQL_PASSWORD}
