@@ -3,11 +3,9 @@ package com.example.demo1.controller;
 import com.example.demo1.dao.UserMapper;
 import com.example.demo1.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.List;
 
 /**
  * comment
@@ -18,22 +16,38 @@ import java.util.Optional;
  * @version: 1.0
  */
 @RestController
+@RequestMapping("/user")
 public class UserController {
-    @Autowired
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
 
-    @PostMapping("/user/add")
-    public User insertUser(User user) {
-        Long l=userMapper.insertUser(user);
+    @Autowired
+    public UserController(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
+
+    @PostMapping("/truncate")
+    public String truncateTable() {
+        userMapper.truncateTable();
+        return "表格已清空";
+    }
+
+    @PostMapping("/add")
+    public User insertUser(@RequestBody User user) {
+        Long l = userMapper.insertUser(user);
         System.out.println(l);
         return user;
     }
 
-    @GetMapping("/user/query")
+    @GetMapping("/query")
     public User selectUserById(Integer id) {
-        Optional<User> userOptional = Optional.ofNullable(userMapper.selectUserById(id));
-//        return userMapper.selectUserById(id);
-//        return userOptional.isPresent();
         return userMapper.selectUserById(id);
+    }
+
+    @GetMapping("/all")
+    public List<User> selectAll() {
+        List<User> users = userMapper.selectAll();
+        users.forEach(System.out::println);
+        users.forEach(r -> System.out.println(r.getUsername()));
+        return users;
     }
 }

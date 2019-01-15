@@ -9,9 +9,5 @@ package com.example.demo1.entity;
  * @version: 1.0
  */
 public class Son extends Parent {
-    public static void main(String[] args) {
-        Son son=new Son();
-        System.out.println(son.getHello());
-        System.out.println(son.multiplication(5,6));
-    }
+
 }

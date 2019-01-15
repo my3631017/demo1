@@ -2,15 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.demo1.dao.UserMapper">
     <sql id="BaseSql">
-        id,username,age
+        id,
+        username,
+        age
     </sql>
+
+    <update id="truncateTable">
+        truncate table `user`
+    </update>
 
     <select id="selectUserById" parameterType="integer" resultType="com.example.demo1.entity.User">
         SELECT
         <include refid="BaseSql"/>
-        FROM user
-        WHERE id=#{id}
+        FROM `user`
+        WHERE
+        id = #{id}
     </select>
+
+    <select id="selectAll" resultType="com.example.demo1.entity.User">
+        SELECT
+        <include refid="BaseSql"/>
+        FROM `user`
+    </select>
+
     <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id"
             parameterType="com.example.demo1.entity.User">
         INSERT INTO `user`
@@ -21,9 +35,6 @@
             <if test="age!=null">
                 age,
             </if>
-            <if test="password!=null">
-                password,
-            </if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -32,9 +43,6 @@
             </if>
             <if test="age!=null">
                 #{age},
-            </if>
-            <if test="password!=null">
-                #{password},
             </if>
         </trim>
     </insert>

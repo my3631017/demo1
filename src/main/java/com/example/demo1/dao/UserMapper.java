@@ -3,6 +3,8 @@ package com.example.demo1.dao;
 import com.example.demo1.entity.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * comment
  *
@@ -13,6 +15,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserMapper {
+    void truncateTable();
+
     Long insertUser(User user);
+
     User selectUserById(Integer id);
+
+    List<User> selectAll();
 }

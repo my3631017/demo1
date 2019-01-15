@@ -12,3 +12,7 @@ spring:
     url: ${DEMO_MYSQL_URL}
     username: ${DEMO_MYSQL_USERNAME}
     password: ${DEMO_MYSQL_PASSWORD}
+
+netty:
+ port: ${NETTY_PORT:51080}
+ maxContentLength: ${NETTY_MAXCONTENTLENGTG:65535}
