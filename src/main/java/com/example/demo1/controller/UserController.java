@@ -10,10 +10,9 @@ import java.util.List;
 /**
  * comment
  *
- * @author: 通天晓107
- * @review:
- * @date: 2018-10-30 10:57
- * @version: 1.0
+ * @author 破冰
+ * @review 破冰
+ * @date: 2019-01-04 17:28
  */
 @RestController
 @RequestMapping("/user")
@@ -39,7 +38,7 @@ public class UserController {
     }
 
     @GetMapping("/query")
-    public User selectUserById(Integer id) {
+    public User selectUserById(@RequestParam("id") Integer id) {
         return userMapper.selectUserById(id);
     }
 

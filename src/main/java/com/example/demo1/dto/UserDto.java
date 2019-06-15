@@ -7,10 +7,9 @@ import java.io.Serializable;
 /**
  * comment
  *
- * @author: 通天晓107
- * @review:
- * @date: 2018-11-02 14:05
- * @version: 1.0
+ * @author 破冰
+ * @review 破冰
+ * @date: 2019-01-04 17:28
  */
 @Data
 public class UserDto<T> implements Serializable {

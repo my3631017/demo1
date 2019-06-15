@@ -17,7 +17,7 @@ public class SocketClient {
     // 搭建客户端
     public static void main(String[] args) throws IOException {
         //创建客户端，并连接服务器
-        Socket socket = new Socket("192.168.1.107", 5209);
+        Socket socket = new Socket("192.168.excercise1.107", 5209);
         System.out.println("客户端启动成功");
         //获取控制台输入流
         BufferedReader out = new BufferedReader(new InputStreamReader(System.in));

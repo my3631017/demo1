@@ -46,4 +46,27 @@
             </if>
         </trim>
     </insert>
+
+    <update id="update" parameterType="list">
+        update `user`
+        <trim prefix="set" suffixOverrides=",">
+            age =
+            <foreach collection="list" item="item" open="case " close=" end,">
+                when id = #{item.id} AND username = #{item.username} then #{item.age}
+            </foreach>
+            description =
+            <foreach collection="list" item="item" open="case " close=" end,">
+                when id = #{item.id} AND username = #{item.username} then #{item.description}
+            </foreach>
+            height =
+            <foreach collection="list" item="item" open="case " close=" end,">
+                when id = #{item.id} AND username = #{item.username} then #{item.height}
+            </foreach>
+        </trim>
+        <where>
+            <foreach collection="list" item="item" open="( " separator=") or (" close=" )">
+                id = #{item.id} AND username = #{item.username}
+            </foreach>
+        </where>
+    </update>
 </mapper>

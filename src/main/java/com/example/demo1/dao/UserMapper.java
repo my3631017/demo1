@@ -1,6 +1,7 @@
 package com.example.demo1.dao;
 
 import com.example.demo1.entity.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -8,10 +9,9 @@ import java.util.List;
 /**
  * comment
  *
- * @author: 通天晓107
- * @review:
- * @date: 2018-10-30 10:58
- * @version: 1.0
+ * @author 破冰
+ * @review 破冰
+ * @date: 2019-01-04 17:28
  */
 @Repository
 public interface UserMapper {
@@ -22,4 +22,6 @@ public interface UserMapper {
     User selectUserById(Integer id);
 
     List<User> selectAll();
+
+    Boolean update(@Param("list") List<User> userList);
 }

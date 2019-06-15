@@ -5,10 +5,9 @@ import lombok.Data;
 /**
  * comment
  *
- * @author: 通天晓107
- * @review:
- * @date: 2018-11-08 15:39
- * @version: 1.0
+ * @author 破冰
+ * @review 破冰
+ * @date: 2019-01-04 17:28
  */
 @Data
 public class Parent {

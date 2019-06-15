@@ -3,10 +3,9 @@ package com.example.demo1.enums;
 /**
  * comment
  *
- * @author: 通天晓107
- * @review:
- * @date: 2018-11-02 10:36
- * @version: 1.0
+ * @author 破冰
+ * @review 破冰
+ * @date: 2019-01-04 17:28
  */
 public enum Fruits {
     apple("苹果", 2), banana("香蕉", 3), watermelon("西瓜", 1);

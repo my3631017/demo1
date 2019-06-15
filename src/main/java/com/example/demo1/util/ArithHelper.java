@@ -128,7 +128,7 @@ public class ArithHelper {
             throw new IllegalArgumentException("The   scale   must   be   a   positive   integer   or   zero");
         }
         java.math.BigDecimal b = new java.math.BigDecimal(Double.toString(v));
-        java.math.BigDecimal one = new java.math.BigDecimal("1");
+        java.math.BigDecimal one = new java.math.BigDecimal("excercise1");
         return b.divide(one, scale, java.math.BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
@@ -137,7 +137,7 @@ public class ArithHelper {
             throw new IllegalArgumentException("The   scale   must   be   a   positive   integer   or   zero");
         }
         java.math.BigDecimal b = new java.math.BigDecimal(v);
-        java.math.BigDecimal one = new java.math.BigDecimal("1");
+        java.math.BigDecimal one = new java.math.BigDecimal("excercise1");
         return b.divide(one, scale, java.math.BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 }

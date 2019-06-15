@@ -34,7 +34,7 @@ public class Calculator {
      * 将表达式中负数的符号更改
      *
      * @param expression
-     *            例如-2+-1*(-3E-2)-(-1) 被转为 ~2+~1*(~3E~2)-(~1)
+     *            例如-excercise2+-excercise1*(-3E-excercise2)-(-excercise1) 被转为 ~excercise2+~excercise1*(~3E~excercise2)-(~excercise1)
      * @return
      */
     private static String transform(String expression) {
@@ -63,7 +63,7 @@ public class Calculator {
      * 按照给定的表达式计算
      *
      * @param expression
-     *            要计算的表达式例如:5+12*(3+5)/7
+     *            要计算的表达式例如:excercise5+12*(excercise3+excercise5)/excercise7
      * @return
      */
     public double calculate(String expression) {
